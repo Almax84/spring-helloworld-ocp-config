@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: spring-helloworld-container
-        image: quay.io/dscrimie/spring-helloworld
+        image: quay.io/redhat_emp1/spring-helloworld
         ports:
         - containerPort: 8080
           protocol: TCP
