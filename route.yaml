@@ -1,0 +1,13 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: spring-helloworld-route
+  labels:
+    app: spring-helloworld
+spec:
+  to:
+    kind: Service
+    name: spring-helloworld-service
+  port:
+    targetPort: http
+
