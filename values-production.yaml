@@ -1,0 +1,7 @@
+namespace: default
+image:
+  repository: quay.io/redhat_emp1/spring-helloworld
+  tag: 1693317657117
+container:
+  port: 8080
+

@@ -2,6 +2,7 @@ apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
   name: spring-helloworld-deployment
+  namespace: {{ .Values.namespace }}
   labels:
     app: spring-helloworld
 spec:
@@ -15,9 +16,9 @@ spec:
     spec:
       containers:
       - name: spring-helloworld-container
-        image: quay.io/redhat_emp1/spring-helloworld:1693317657117
+        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
         ports:
-        - containerPort: 8080
+        - containerPort: {{ .Values.container.port }}
           protocol: TCP
   triggers:
   - type: ConfigChange
