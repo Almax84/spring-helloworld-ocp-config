@@ -1,14 +1,20 @@
-apiVersion: route.openshift.io/v1
 kind: Route
+apiVersion: route.openshift.io/v1
 metadata:
-  name: spring-helloworld-route
+  name: spring-helloworld-app1
   namespace: esercito-tekton
   labels:
     app: spring-helloworld
+    infra: prova
 spec:
+  host: spring-helloworld-app1-esercito-tekton.apps.lab01.gpslab.club
   to:
     kind: Service
     name: spring-helloworld-service
+    weight: 100
   port:
     targetPort: http
+  tls:
+    termination: edge
+  wildcardPolicy: None
 
