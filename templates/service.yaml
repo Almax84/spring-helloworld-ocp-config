@@ -10,6 +10,10 @@ spec:
     targetPort: 8080
     protocol: TCP
     name: http
+  - port: 8443
+    targetPort: 8443
+    protocol: TCP
+    name: https
   selector:
     app: spring-helloworld
 
