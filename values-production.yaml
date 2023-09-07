@@ -4,4 +4,6 @@ image:
   tag: 1693317657117
 container:
   port: 8080
+service:
+  port: 8080
 
